@@ -25,11 +25,13 @@ Ya tiene una función en la que puedes reiniciar el juego o si ganas, podrás co
 ### Otros repositorios (Alternos)
  * 🗄 [Encriptador v2](https://github.com/joelmiguelvalente/encriptador/tree/main)
  * 🗄 [Encriptador v3](https://github.com/joelmiguelvalente/encriptador)
+ * 🗄 [Ahorcado v2](https://github.com/joelmiguelvalente/ahorcadov2)
 
 ### Páginas
  * 🔗 [Encriptador v1](https://joelmiguelvalente.github.io/challengeencriptador/) 
  * 🔗 [Encriptador v2](https://exquisite-moonbeam-680e7e.netlify.app/) 
  * 🔗 [Encriptador v3](https://joelmiguelvalente.github.io/encriptador/)
+ * 🔗 [Ahorcado v2](https://joelmiguelvalente.github.io/ahorcadov2/)
  * 🔗 [Barbería Alura](https://joelmiguelvalente.github.io/barberiaalura/) 
 
 ### Redes 
