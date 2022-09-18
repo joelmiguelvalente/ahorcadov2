@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="author" content="Miguel92"/>
+<meta name="description" content="Una nueva version del ahorcado, creo que mejorada!"/>
+<meta name="images" content="https://ui-avatars.com/api/?size=16&background=343434&color=FFF&name=Ahorcado&format=png"/>
+<meta name="language" content="Spanish"/>
+<meta name="revisit-after" content="3 days"/>
+<meta name="theme-color" content="#333333"/>
+<meta name="title" content="Ahorcado — Joel Miguel Valente"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="image/png" href="https://ui-avatars.com/api/?size=16&background=343434&color=FFF&name=Ahorcado&format=png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"/>
+<link rel="stylesheet" href="css/ahorcado.css">
+<title>Ahorcado - v1.1</title>
+</head>
+<body class="bgStart">
+	<div id="app">
+		<!-- ======== INICIO ======== -->
+		<div class="principal inicio" style="display: none;">
+			<div class="box glass">
+				<div class="button" data-bg=".bgPlay" data-page=".jugando">Empezar juego</div>
+				<div class="button" data-bg=".bgAdd" data-page=".agregando">Agregar nuevas palabras</div>
+			</div>
+		</div>
+		<!-- ======== AGREGAR PALABRAS ======== -->
+		<div class="principal agregando" style="display: none;">
+			<div class="box2">
+				<div class="glass">
+					<h3>Agrega nuevas palabras</h3>
+					<textarea id="newWords"></textarea>
+					<small>Puedes agregar más de 1 palabra, separandolas con un -<i>(guión)</i></small>
+					<div class="botones">
+						<div class="button" data-action="agregarPalabra">Agregar palabra</div>
+						<div class="button" data-bg=".bgStart" data-page=".inicio">Regresar</div>
+					</div>
+				</div>
+				<div class="glass">
+					<h3>Lista de <strong></strong> palabras</h3>
+					<ul class="lista"></ul>
+					<div class="button" data-action="reiniciarLista">Reiniciar lista</div>
+				</div>
+			</div>
+		</div>
+		<!-- ======== JUGAR ======== -->
+		<div class="principal jugando" style="display: none;">
+			<div class="box">
+				<div class="ahorcado">
+					<div class="cuerpo-contenedor"></div>
+				</div>
+			</div>
+			<div class="box">
+				<div class="inputs"></div>
+				<div class="botones">
+					<div class="button" data-bg=".bgPlay" data-page=".jugando">Nuevo juego</div>
+					<div class="button" data-action="finalizar">Desistir</div>
+					<div class="button" data-bg=".bgStart" data-page=".inicio">Regresar</div>
+				</div>
+			</div>
+			<div class="box">
+				<div class="bx">
+					<p>Intentos:</p>
+					<b>10</b>
+				</div>
+				<div class="bx">
+					<p>Letras equivocadas</p>
+					<div class="letras"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======== MODAL ======== -->
+ 	<div id="mymodal"></div>
+
+ 	<!-- ======== PRELOADER ======== -->
+	<div id="preload">
+		<div class="loader">
+		   <div class="face">
+		      <div class="circle"></div>
+		   </div>
+		   <div class="face">
+		      <div class="circle"></div>
+		   </div>
+		</div>
+	</div>
+
+	<!-- ======== SCRIPT ======== -->
+   <script async defer type="module" src="js/script.js"></script>
+</body>
+</html>
