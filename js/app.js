@@ -18,6 +18,12 @@ export function on(el, type, listener, all = false) {
 	}
 }
 
+/* Detecta navegador */
+export const isAndroid = navigator.userAgent.match(/Android/i) !== null;
+export const isiOS = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)/i) !== null;
+export const isMobile = (isiOS || isAndroid);
+
+
 /**
  * Creamos una plantilla predeterminada
 */

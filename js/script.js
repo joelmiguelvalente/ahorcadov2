@@ -1,4 +1,4 @@
-import { selector, html, on, modal } from './app.js';
+import { selector, html, on, modal,isAndroid, isiOS, isMobile } from './app.js';
 import { listaPalabras } from './listaPalabras.js';
 
 let lista;
@@ -156,6 +156,9 @@ const iniciarJuego = () => {
    selector(".inputs").innerHTML = html;
 }
 
+if ( isMobile ) {
+	selector(".inputs > input:first-child").focus()
+}
 /**
  * Con esta función juntamos las letras escrita por el usuario
 */
