@@ -28,6 +28,7 @@ Ya tiene una función en la que puedes reiniciar el juego o si ganas, podrás co
  * 🗄 [Ahorcado v2](https://github.com/joelmiguelvalente/ahorcadov2)
 
 ### Páginas
+ * 🔗 [Portfolio](https://joelmiguelvalente.github.io/porfolio/) 
  * 🔗 [Encriptador v1](https://joelmiguelvalente.github.io/challengeencriptador/) 
  * 🔗 [Encriptador v2](https://exquisite-moonbeam-680e7e.netlify.app/) 
  * 🔗 [Encriptador v3](https://joelmiguelvalente.github.io/encriptador/)

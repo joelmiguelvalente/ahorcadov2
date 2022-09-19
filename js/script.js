@@ -207,20 +207,27 @@ const accionModal = bool => {
  * Función para comprobar si la letra es incorrecta
 */
 const errores = tecla => {
+	// Forzamos letra minuscula
+	let letraMin = tecla.toLowerCase()
 	// Variable para continuar 
 	let continuar = true;
 	// Creamos span para añadir letra equivocada
 	const span = document.createElement("span")
 	span.classList.add('letra')
-	span.innerHTML = tecla
+	span.innerHTML = letraMin
 	// Obtenemos todas las letras equivocadas
 	const existen = selector(".letras > span", true)
 	// Recorremos la lista de letras erroneas
-	for(let init = 0; init < existen.length; init++) continuar = (existen[init].textContent !== tecla);
+	for(let init = 0; init < existen.length; init++) continuar = (existen[init].textContent.toLowerCase() !== letraMin);
 	// Si la letra NO existe, continuamos
 	if(continuar) {
-		selector(".letras").appendChild(span)
-		html(".bx > b", intentos)
+		// Dejamos de ejecutar al llegar a 0
+		if(intentos >= 0) {
+			selector(".letras").appendChild(span)
+			html(".bx > b", intentos)
+			intentos = intentos - 1;
+			crearMuneco()
+		}
 		// Si la cantidad de intentos ha llegado a 0
 		if(intentos === 0) accionModal(false)
 	}
@@ -245,22 +252,21 @@ const crearMuneco = () => {
  * Solo admite desde la "A" hasta la "Z"
 */
 document.onkeypress = tecla => {
-	if(tecla.which >= 97 || tecla.which <= 122) {
+	let teclaNum = tecla.which;
+	let letraMin = tecla.key.toLowerCase();
+	// No importará si es mayuscula o minuscula
+	if(teclaNum >= 65 || teclaNum <= 90 && teclaNum >= 97 || teclaNum <= 122) {
 		// Si la letra coincide con la palabra aleatoria
-		if(newArray.includes(tecla.key)) {
+		if(newArray.includes(letraMin)) {
 			let campos = selector(".inputs > input", true)
 			for(let pos = 0; pos < newArray.length; pos++) {
 				// Solo si son iguales, las agregamos
-				if(newArray[pos] === tecla.key) {
-					campos[pos].setAttribute("value", newArray[pos])
+				if(newArray[pos].toLowerCase() === letraMin) {
+					campos[pos].setAttribute("value", newArray[pos].toLowerCase())
 				}
 			}
 		// Si no coincide, restamos puntos.
-		} else {
-			intentos = intentos - 1;
-			crearMuneco()
-			errores(tecla.key)
-		}
+		} else errores(tecla.key)
 	}
 	// Una vez completada la palabra, ejecutamos el modal
 	if(palabraEscrita() === aleatorio) accionModal(true)
